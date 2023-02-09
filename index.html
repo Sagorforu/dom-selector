@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .phone-container li{
+            color: rgb(119, 13, 218);
+        }
+        #phones-title{
+            color: rgb(7, 55, 97);
+        }
+        #places-title{
+            color: rgb(9, 199, 206);
+        }
+        .important-places{
+            color: rgb(170, 97, 7);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to my DOM</h1>
+    </header>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non totam, sit et eligendi dolores quis doloribus officia dicta distinctio illo quae mollitia autem. Aperiam, velit maiores delectus ullam pariatur quo?</p>
+    <main>
+        <section>
+            <h1>My awesome DOM de baba</h1>
+        <ul>
+            <li>Jalali Set</li>
+            <li>Shafayet</li>
+            <li>Bonobash</li>
+            <li>DOM de baba</li>
+        </ul>
+        </section>
+        <section class="phone-container">
+            <h1 id="phones-title">I like Phones</h1>
+            <ul>
+                <li>Apple</li>
+                <li>Samsung</li>
+                <li>Xaomi</li>
+                <li>Nokia</li>
+            </ul>
+        </section>
+        <section>
+            <h1 id="places-title">Places I like to visit</h1>
+            <ul>
+                <li class="important-places">Soondarban</li>
+                <li class="important-places">Bandarban</li>
+                <li class="important-places">Kataban</li>
+                <li class="important-places">Shalban</li>
+            </ul>
+        </section>
+    </main>
+    <script src="js/dom.js"></script>
+    <script>
+        // Option-1: getElementsByTagName
+        const liCollection = document.getElementsByTagName('li');
+        // console.log(liCollection);
+        for (const li of liCollection){
+            // console.log(li.innerText);
+        }
+        const allHeaders = document.getElementsByTagName('h1');
+        for (const h1 of allHeaders){
+            // console.log(h1.innerText);
+        }
+
+        // Option-2: getElementsByClassName
+        const places = document.getElementsByClassName('important-places');
+        for (const place of places){
+            // console.log(place.innerText);
+        }
+
+        // Option-3: getElementById
+        const phonesTitle = document.getElementById('phones-title');
+        phonesTitle.innerText = 'Phones head changed by JS'
+
+        // Option-4: QuerySelector
+        const firstLi = document.querySelector('.phone-container li');
+        for (const li of firstLi){
+            console.log(li);
+        }
+
+        // Option-5: QuerySelectorAll
+        // const someLi = document.querySelectorAll('.phone-container li');
+        // for (const li of someLi){
+        //     console.log(li);
+        // }
+    </script>
+</body>
+</html>
